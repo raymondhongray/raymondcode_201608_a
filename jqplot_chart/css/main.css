@@ -1,0 +1,24 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #ccc;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    background: #eee;
+}

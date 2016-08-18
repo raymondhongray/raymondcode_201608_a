@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="utf-8">
+    <title>jqplot_chart</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta property="og:title" content="jqplot_chart" />
+    <meta property="og:image" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link rel="shortcut icon" href="">
+    <!-- CSS -->
+    <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.jqplot.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/fd-plot.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div style="position: relative;width: 100%;height: 50px;"></div>
+            <div id="width-by-queryStr" style="position: relative;width: 180px;margin: auto;display: block;">
+                <div id="chart-area">
+                    <ul class="chart-tabs">
+                        <li data-id="0"><a href="#t-chart-area0">美國</a></li>
+                        <li data-id="1"><a href="#t-chart-area1">歐洲</a></li>
+                        <li data-id="2"><a href="#t-chart-area2">亞洲</a></li>
+                        <li data-id="3"><a href="#t-chart-area3">拉美</a></li>
+                        <li data-id="4"><a href="#t-chart-area4">其他</a></li>
+                    </ul>
+                    <div id="t-chart-area0" data-id="0">
+                        <div class="chart-area-btn default-active">
+                            <p class="chart-area-p">那斯達克</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">S&P 500</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">道瓊工業</p>
+                        </div>
+                        <div id="t-chart0" class="area-content">
+                        </div>
+                    </div>
+                    <div id="t-chart-area1" data-id="1">
+                        <div class="chart-area-btn default-active">
+                            <p class="chart-area-p">歐洲</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">英國</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">德國</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">法國</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">荷蘭</p>
+                        </div>
+                        <div id="t-chart1" class="area-content">
+                        </div>
+                    </div>
+                    <div id="t-chart-area2" data-id="2">
+                        <div class="chart-area-btn default-active">
+                            <p class="chart-area-p">MSCI亞太</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">台灣加權</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">上海綜合</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">香港恆生</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">日經225</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">韓國綜合</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">印度</p>
+                        </div>
+                        <div id="t-chart2" class="area-content">
+                        </div>
+                    </div>
+                    <div id="t-chart-area3" data-id="3">
+                        <div class="chart-area-btn default-active">
+                            <p class="chart-area-p">MSCI新興拉美</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">墨西哥</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">巴西</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">智利</p>
+                        </div>
+                        <div id="t-chart3" class="area-content">
+                        </div>
+                    </div>
+                    <div id="t-chart-area4" data-id="4">
+                        <div class="chart-area-btn default-active">
+                            <p class="chart-area-p">MSCI世界</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">MSCI新興市場</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">澳洲</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">新加坡</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">印尼</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">南非</p>
+                        </div>
+                        <div class="chart-area-btn">
+                            <p class="chart-area-p">俄羅斯</p>
+                        </div>
+                        <div id="t-chart4" class="area-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="position: relative;width: 100%;height: 50px;"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/libs/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="js/libs/plugins/jqplot.dateAxisRenderer.js"></script>
+    <script type="text/javascript" src="js/libs/plugins/jqplot.logAxisRenderer.js"></script>
+    <script type="text/javascript" src="js/libs/plugins/jqplot.canvasTextRenderer.js"></script>
+    <script type="text/javascript" src="js/libs/plugins/jqplot.canvasAxisTickRenderer.js"></script>
+    <script type="text/javascript" src="js/libs/plugins/jqplot.cursor.js"></script>
+    <script type="text/javascript" src="js/libs/plugins/jqplot.highlighter.js"></script>
+    <script type="text/javascript" src="js/libs/plugins/jqplot.dragable.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/fd-plot.js"></script>
+</body>
+
+</html>

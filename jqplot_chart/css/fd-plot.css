@@ -1,0 +1,88 @@
+/*jquery ui css*/
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    font-size: 10px;
+    /*padding: 5px;*/
+    padding: 1.7px;
+}
+
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+    /*color: #ff9933;*/
+}
+
+.ui-tabs .ui-tabs-panel {
+    padding: 0;
+    margin-top: 10px;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    border: 1px solid #046494;
+    background: #046494;
+}
+
+#chart-area {
+    margin-top: 50px;
+}
+
+.btn-area {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.btn-area > button {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#chart-area {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: block;
+    background: #fff;
+}
+
+.chart-area-btn {
+    position: relative;
+    width: 100%;
+    height: 25px;
+    border: 1px solid #ccc;
+    background: linear-gradient(#fff, #ccc);
+    cursor: pointer;
+}
+
+
+/*.chart-area-btn:hover {
+    opacity: 0.7;
+}*/
+
+.chart-area-btn.active {
+    background: rgb(222, 239, 255);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(222, 239, 255, 1) 0%, rgba(152, 190, 222, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(222, 239, 255, 1) 0%, rgba(152, 190, 222, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(222, 239, 255, 1) 0%, rgba(152, 190, 222, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#deefff', endColorstr='#98bede', GradientType=0);
+    /* IE6-9 */
+}
+
+.chart-area-btn > p {
+    line-height: 2em;
+    font-size: 10px;
+}
+
+#chart-area .area-content {
+    margin-top: 10px;
+}
