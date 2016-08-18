@@ -1,3 +1,51 @@
+/*向上三角形*/
+
+.arrow-up {
+    position: relative;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #f00;
+}
+
+.arrow-up:before {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: -4px;
+    width: 9px;
+    height: 12px;
+    background: #f00;
+    zoom: 0.5;
+}
+
+
+/*向下三角形*/
+
+.arrow-down {
+    position: relative;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid green;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.arrow-down:before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: -4px;
+    width: 9px;
+    height: 12px;
+    background: green;
+    zoom: 0.5;
+}
+
+
 /*jquery ui css*/
 
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
@@ -57,6 +105,7 @@ a.ui-button:active,
     height: 25px;
     border: 1px solid #ccc;
     background: linear-gradient(#fff, #ccc);
+    font-size: 10px;
     cursor: pointer;
 }
 
@@ -78,9 +127,30 @@ a.ui-button:active,
     /* IE6-9 */
 }
 
-.chart-area-btn > p {
-    line-height: 2em;
-    font-size: 10px;
+.chart-area-btn > p.chart-area-p {
+    line-height: 25px;
+    width: 65px;
+    margin-left: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.chart-area-btn > span {
+    float: right;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 8px;
+}
+
+.chart-area-btn > .i-value {
+    margin-right: 30px;
+}
+
+.chart-area-btn > .interest,
+.chart-area-btn > .rate {
+    color: red;
 }
 
 #chart-area .area-content {

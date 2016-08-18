@@ -1,7 +1,48 @@
-function initChartArea(arrData, linePoints) {
+var tab_contents = [
+    ['那斯達克', 'S&P 500', '道瓊工業'],
+    ['歐洲', '英國', '德國', '法國', '荷蘭'],
+    ['MSCI亞太', '台灣加權', '上海綜合', '香港恆生', '日經225', '韓國綜合', '印度'],
+    ['MSCI新興拉美', '墨西哥', '巴西', '智利'],
+    ['MSCI世界', 'MSCI新興市場', '澳洲', '新加坡', '印尼', '南非', '俄羅斯']
+];
 
+function initChartArea(arrData, linePoints) {
+    // 目前 sub_item 最多為 7 
+    // 製作 clone_模型
+    for (var i = 1; i < 7; i++) {
+        $('#t-chart-clone > .chart-area-btn[data-id="0"]').clone().attr('data-id', i).insertBefore('#t-chart-clone > .area-content');
+    }
+
+    // 將 clone_模型 產生到各 Tab_content 去
+    for (var i = 0; i < tab_contents.length; i++) {
+        $('#t-chart-clone').clone().attr('id', 't-chart-area' + i).attr('data-id', i).appendTo('#chart-area');
+        $('#t-chart-area' + i + ' > .area-content').attr('id', 't-chart' + i);
+        for (var j = 0; j < 7; j++) {
+            if (j < tab_contents[i].length) {
+                $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .chart-area-p').text(tab_contents[i][j]);
+            } else {
+                $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"]').remove();
+            }
+        }
+    }
+    // 移除 clone_模型
+    $('#t-chart-clone').remove();
+   
+    // 初始化 jQuery ui tab
     $('#chart-area').tabs();
+    // highlight Tab_content 
     $('.chart-area-btn.default-active').addClass('active');
+
+    if ($('#chart-area').width() < 250) {
+        // 寬度太窄有個資訊在表格上隱藏
+        $('.chart-area-btn > .rate').css('display', 'none');
+        $('.chart-area-btn > .i-value').css('margin-right', '5px');
+    }
+    if ($('#chart-area').width() < 160) {
+        // 寬度太窄有個資訊在表格上隱藏
+        $('.chart-area-btn > .interest').css('display', 'none');
+        $('.chart-area-btn > .i-value').css('margin-right', '2px');
+    }
 
     var minValue = 4495;
     var maxValue = 4528;
