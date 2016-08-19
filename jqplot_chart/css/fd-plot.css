@@ -75,10 +75,6 @@ a.ui-button:active,
     background: #046494;
 }
 
-#chart-area {
-    margin-top: 50px;
-}
-
 .btn-area {
     margin-top: 30px;
     margin-bottom: 50px;
@@ -91,7 +87,7 @@ a.ui-button:active,
     margin-right: 5px;
 }
 
-#chart-area {
+#fd-plot {
     position: relative;
     width: 100%;
     margin: auto;
@@ -153,6 +149,6 @@ a.ui-button:active,
     color: red;
 }
 
-#chart-area .area-content {
+#fd-plot .area-content {
     margin-top: 10px;
 }

@@ -15,7 +15,7 @@ function initChartArea(arrData, linePoints) {
 
     // 將 clone_模型 產生到各 Tab_content 去
     for (var i = 0; i < tab_contents.length; i++) {
-        $('#t-chart-clone').clone().attr('id', 't-chart-area' + i).attr('data-id', i).appendTo('#chart-area');
+        $('#t-chart-clone').clone().attr('id', 't-chart-area' + i).attr('data-id', i).appendTo('#fd-plot');
         $('#t-chart-area' + i + ' > .area-content').attr('id', 't-chart' + i);
         for (var j = 0; j < 7; j++) {
             if (j < tab_contents[i].length) {
@@ -27,18 +27,19 @@ function initChartArea(arrData, linePoints) {
     }
     // 移除 clone_模型
     $('#t-chart-clone').remove();
-   
+
     // 初始化 jQuery ui tab
-    $('#chart-area').tabs();
-    // highlight Tab_content 
+    $('#fd-plot').tabs();
+    // highlight Tab_content btn
+    $('.t-chart > .chart-area-btn[data-id="0"]').addClass('default-active');
     $('.chart-area-btn.default-active').addClass('active');
 
-    if ($('#chart-area').width() < 250) {
+    if ($('#fd-plot').width() < 250) {
         // 寬度太窄有個資訊在表格上隱藏
         $('.chart-area-btn > .rate').css('display', 'none');
         $('.chart-area-btn > .i-value').css('margin-right', '5px');
     }
-    if ($('#chart-area').width() < 160) {
+    if ($('#fd-plot').width() < 160) {
         // 寬度太窄有個資訊在表格上隱藏
         $('.chart-area-btn > .interest').css('display', 'none');
         $('.chart-area-btn > .i-value').css('margin-right', '2px');
@@ -141,12 +142,12 @@ function addChart(chartId, arrData, chartTitle, minValue, maxValue, linePoints) 
     });
 
     $('.jqplot-highlighter-tooltip').addClass('ui-corner-all');
-    $('#' + chartId).width($('#chart-area').width()).height(200);
+    $('#' + chartId).width($('#fd-plot').width()).height(200);
     plot.replot();
 
     $(window).resize(function(e) {
         e.stopPropagation();
-        $('#' + chartId).width($('#chart-area').width());
+        $('#' + chartId).width($('#fd-plot').width());
         plot.replot();
     });
 }
@@ -209,7 +210,7 @@ $(document).ready(function() {
 
     initChartArea(perday, linePoints);
 
-    $('#chart-area > ul.chart-tabs > li').click(function() {
+    $('#fd-plot > ul.chart-tabs > li').click(function() {
         // $('#t-chart').empty();
         $('.chart-area-btn').removeClass('active');
         $('.chart-area-btn.default-active').addClass('active');
