@@ -75,7 +75,8 @@ function initChartArea(arrData, linePoints) {
                     $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .arrow').addClass('arrow-up');
                 } else {
                     $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .arrow').addClass('arrow-down');
-                    $('.chart-area-btn > .interest, .chart-area-btn > .rate').css('color', 'green');
+                    $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .interest').css('color', 'green');
+                    $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .rate').css('color', 'green');
                 }
                 // 擺放 rate
                 $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .rate').text('(' + rate + '%)');
