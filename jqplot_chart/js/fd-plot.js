@@ -20,8 +20,8 @@ function initChartArea(arrData, linePoints) {
         '<p class="chart-area-p">那斯達克</p>' +
         '<span class="arrow arrow-up"></span>' +
         '<span class="rate">(0.19%)</span>' +
-        '<span class="interest">1.55</span>' +
-        '<span class="i-value">1485.87</span>' +
+        '<span class="interest">11.55</span>' +
+        '<span class="i-value">148589.87</span>' +
         '</div>' +
         '<div class="area-content"></div>' +
         '</div>';
@@ -59,6 +59,7 @@ function initChartArea(arrData, linePoints) {
         // 寬度太窄有個資訊在表格上隱藏
         $('.chart-area-btn > .rate').css('display', 'none');
         $('.chart-area-btn > .i-value').css('margin-right', '5px');
+        $('.chart-area-btn > p.chart-area-p').css('width', '50px');
     }
     if ($('#fd-plot').width() < 160) {
         // 寬度太窄有個資訊在表格上隱藏
