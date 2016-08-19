@@ -6,6 +6,30 @@ var tab_contents = [
     ['MSCI世界', 'MSCI新興市場', '澳洲', '新加坡', '印尼', '南非', '俄羅斯']
 ];
 
+function getIValue() {
+    // 根據到時候api的資料結構來改寫
+    return getRandomInt(181234, 2812344);
+}
+
+function getInterest() {
+    // 根據到時候api的資料結構來改寫
+    var intPart = getRandomInt(0, 99);
+    var floatPart = getRandomInt(0, 99);
+    if (intPart % 2 != 0) {
+        intPart = intPart - (2 * intPart);
+    }
+    return parseInt(intPart) + '.' + parseInt(floatPart);
+}
+
+function getRate() {
+    // 根據到時候api的資料結構來改寫
+    var intPart = getRandomInt(0, 99);
+     if (intPart % 2 != 0) {
+        intPart = intPart - (2 * intPart);
+    }
+    return intPart;
+}
+
 function initChartArea(arrData, linePoints) {
     // 製作 fd-plot 基礎_element
     var fdPlotElement = '<ul class="chart-tabs">' +
@@ -18,7 +42,7 @@ function initChartArea(arrData, linePoints) {
         '<div id="t-chart-clone" class="t-chart" data-id="0">' +
         '<div class="chart-area-btn" data-id="0">' +
         '<p class="chart-area-p">那斯達克</p>' +
-        '<span class="arrow arrow-up"></span>' +
+        '<span class="arrow"></span>' +
         '<span class="rate">(0.19%)</span>' +
         '<span class="interest">11.55</span>' +
         '<span class="i-value">148589.87</span>' +
@@ -40,7 +64,25 @@ function initChartArea(arrData, linePoints) {
         $('#t-chart-area' + i + ' > .area-content').attr('id', 't-chart' + i);
         for (var j = 0; j < 7; j++) {
             if (j < tab_contents[i].length) {
+                // 擺放 sub title
                 $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .chart-area-p').text(tab_contents[i][j]);
+
+                var iValue = getIValue();
+                var rate = getRate();
+                var interest = getInterest();
+                // 擺放 箭頭
+                if (interest >= 0) {
+                    $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .arrow').addClass('arrow-up');
+                } else {
+                    $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .arrow').addClass('arrow-down');
+                    $('.chart-area-btn > .interest, .chart-area-btn > .rate').css('color', 'green');
+                }
+                // 擺放 rate
+                $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .rate').text('(' + rate + '%)');
+                // 擺放 interest
+                $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .interest').text(interest);
+                // 擺放 i-value
+                $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"] > .i-value').text(iValue);
             } else {
                 $('#t-chart-area' + i + ' > .chart-area-btn[data-id="' + j + '"]').remove();
             }

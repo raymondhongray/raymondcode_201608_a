@@ -8,6 +8,10 @@ function getQueryStrByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 $(document).ready(function() {
 	if (getQueryStrByName('width') !== null) {
 		$('#width-by-queryStr').css('width', getQueryStrByName('width'));
