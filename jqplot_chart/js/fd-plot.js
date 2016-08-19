@@ -7,6 +7,27 @@ var tab_contents = [
 ];
 
 function initChartArea(arrData, linePoints) {
+    // 製作 fd-plot 基礎_element
+    var fdPlotElement = '<ul class="chart-tabs">' +
+        '<li data-id="0"><a href="#t-chart-area0">美國</a></li>' +
+        '<li data-id="1"><a href="#t-chart-area1">歐洲</a></li>' +
+        '<li data-id="2"><a href="#t-chart-area2">亞洲</a></li>' +
+        '<li data-id="3"><a href="#t-chart-area3">拉美</a></li>' +
+        '<li data-id="4"><a href="#t-chart-area4">其他</a></li>' +
+        '</ul>' +
+        '<div id="t-chart-clone" class="t-chart" data-id="0">' +
+        '<div class="chart-area-btn" data-id="0">' +
+        '<p class="chart-area-p">那斯達克</p>' +
+        '<span class="arrow arrow-up"></span>' +
+        '<span class="rate">(0.19%)</span>' +
+        '<span class="interest">1.55</span>' +
+        '<span class="i-value">1485.87</span>' +
+        '</div>' +
+        '<div class="area-content"></div>' +
+        '</div>';
+
+    $(fdPlotElement).appendTo('#fd-plot');
+
     // 目前 sub_item 最多為 7 
     // 製作 clone_模型
     for (var i = 1; i < 7; i++) {
